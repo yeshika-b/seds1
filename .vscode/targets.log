@@ -1,5 +1,5 @@
 make.exe all --print-data-base --no-builtin-variables --no-builtin-rules --question
-Makefile:2: *** missing separator.  Stop.
+make: *** No rule to make target 'all'.  Stop.
 
 # GNU Make 4.3
 # Built for Windows32
@@ -8,7 +8,7 @@ Makefile:2: *** missing separator.  Stop.
 # This is free software: you are free to change and redistribute it.
 # There is NO WARRANTY, to the extent permitted by law.
 
-# Make data base, printed on Fri Aug 26 20:26:00 2022
+# Make data base, printed on Fri Aug 26 21:25:57 2022
 
 # Variables
 
@@ -144,7 +144,7 @@ PATHEXT = .COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC
 ORIGINAL_XDG_CURRENT_DESKTOP = undefined
 # environment
 USERDOMAIN = LAPTOP-MKB6FMGG
-# environment
+# 'override' directive
 GNUMAKEFLAGS := 
 # environment
 OS = Windows_NT
@@ -193,7 +193,7 @@ PROCESSOR_REVISION = 8c01
 # environment
 PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 140 Stepping 1, GenuineIntel
 # variable set hash-table stats:
-# Load=90/1024=9%, Rehash=0, Collisions=6/100=6%
+# Load=90/1024=9%, Rehash=0, Collisions=9/117=8%
 
 # Pattern-specific Variable Values
 
@@ -201,9 +201,9 @@ PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 140 Stepping 1, GenuineIntel
 
 # Directories
 
-# . (key c:/Users/yeshi/seds1, mtime 1661525760): 7 files, no impossibilities.
+# . (key c:/Users/yeshi/seds1, mtime 1661529298): 12 files, no impossibilities.
 
-# 7 files, no impossibilities in 1 directories.
+# 12 files, no impossibilities in 1 directories.
 
 # Implicit Rules
 
@@ -211,19 +211,29 @@ PROCESSOR_IDENTIFIER = Intel64 Family 6 Model 140 Stepping 1, GenuineIntel
 
 # Files
 
-# Not a target:
-incbyfun.o:
+incbyfun.o: incbyfun.c incbyfun.h
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+#  recipe to execute (from 'Makefile', line 8):
+	gcc -c incbyfun.c
 
-final: incbyfun.o
+final: sumofnatnos.o incbyfun.o
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
+#  recipe to execute (from 'Makefile', line 2):
+	gcc sumofnatnos.o incbyfun.o -o final
 
 # Not a target:
 Makefile:
+#  Implicit rule search has been done.
+#  Last modified 2022-08-26 21:24:09
+#  File has been updated.
+#  Successfully updated.
+
+# Not a target:
+incbyfun.h:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
@@ -237,24 +247,43 @@ Makefile:
 # Not a target:
 all:
 #  Command line target.
+#  Implicit rule search has been done.
+#  File does not exist.
+#  File has not been updated.
+
+# Not a target:
+sumofnatnos.c:
 #  Implicit rule search has not been done.
 #  Modification time never checked.
 #  File has not been updated.
 
+# Not a target:
+incbyfun.c:
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+
+sumofnatnos.o: sumofnatnos.c incbyfun.h
+#  Implicit rule search has not been done.
+#  Modification time never checked.
+#  File has not been updated.
+#  recipe to execute (from 'Makefile', line 5):
+	gcc -c sumofnatnos.c
+
 # files hash-table stats:
-# Load=6/1024=1%, Rehash=0, Collisions=0/8=0%
+# Load=10/1024=1%, Rehash=0, Collisions=0/28=0%
 # VPATH Search Paths
 
 # No 'vpath' search paths.
 
 # No general ('VPATH' variable) search path.
 
-# strcache buffers: 1 (0) / strings = 12 / storage = 89 B / avg = 7 B
-# current buf: size = 8162 B / used = 89 B / count = 12 / avg = 7 B
+# strcache buffers: 1 (0) / strings = 16 / storage = 140 B / avg = 8 B
+# current buf: size = 8162 B / used = 140 B / count = 16 / avg = 8 B
 
-# strcache performance: lookups = 17 / hit rate = 29%
+# strcache performance: lookups = 31 / hit rate = 48%
 # hash-table stats:
-# Load=12/8192=0%, Rehash=0, Collisions=0/17=0%
-# Finished Make data base on Fri Aug 26 20:26:00 2022
+# Load=16/8192=0%, Rehash=0, Collisions=0/31=0%
+# Finished Make data base on Fri Aug 26 21:25:57 2022
 
  
